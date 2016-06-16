@@ -14,9 +14,7 @@ import static org.junit.Assert.assertThat;
 public class SImilarityFinderTest {
     int[] seq1 = {0, 3, 2, 1, 4};
     int[] seq2 = {0, 3, 4, 1, 4};
-    int[] otherSeq = {
-            0, 3, 4, 3, 1,5
-    };
+    int[] otherSeq = {0, 3, 4, 3, 1, 5};
 
     static MyMockClass sequenceSearcher;
     static SimilarityFinder similarityFinder;
@@ -32,7 +30,6 @@ public class SImilarityFinderTest {
 
         int[] empty1 = {};
         int[] empty2 = {};
-
         assertThat(similarityFinder.calculateJackardSimilarity(empty1, empty2), is(1.0d));
 
     }
@@ -49,8 +46,9 @@ public class SImilarityFinderTest {
 
     @Test
     public void calculateJackardSimilarityTestWithVeryBigSeqences() {
-        int[] bigsequence = {2,223,2,6,4,7,9,5,9,4};
+        int[] bigsequence = {2, 223, 2, 6, 4, 7, 9, 5, 9, 4};
         assertThat(similarityFinder.calculateJackardSimilarity(seq1, bigsequence), lessThan(1.0d));
     }
+
 
 }
