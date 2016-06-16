@@ -17,6 +17,7 @@ public class SImilarityFinderTest {
     int[] otherSeq = {
             0, 3, 4, 3, 1,5
     };
+
     static MyMockClass sequenceSearcher;
     static SimilarityFinder similarityFinder;
 
@@ -46,5 +47,10 @@ public class SImilarityFinderTest {
         assertThat(similarityFinder.calculateJackardSimilarity(seq1, otherSeq), lessThan(1.0d));
     }
 
+    @Test
+    public void calculateJackardSimilarityTestWithVeryBigSeqences() {
+        int[] bigsequence = {2,223,2,6,4,7,9,5,9,4};
+        assertThat(similarityFinder.calculateJackardSimilarity(seq1, bigsequence), lessThan(1.0d));
+    }
 
 }
