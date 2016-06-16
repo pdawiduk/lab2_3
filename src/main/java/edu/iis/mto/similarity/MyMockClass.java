@@ -8,6 +8,16 @@ import edu.iis.mto.search.SequenceSearcher;
  */
 public class MyMockClass implements SequenceSearcher {
     public SearchResult search(int i, int[] ints) {
-        return null;
+        SearchResult searchResult = new SearchResult() {
+
+            public boolean isFound() {
+                return true;
+            }
+
+            public int getPosition() {
+                return 6;
+            }
+        };
+        return searchResult;
     }
 }
