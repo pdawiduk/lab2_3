@@ -15,7 +15,7 @@ public class SImilarityFinderTest {
     int[] seq1 = {0, 3, 2, 1, 4};
     int[] seq2 = {0, 3, 4, 1, 4};
     int[] otherSeq = {
-            0, 3, 4, 3, 1
+            0, 3, 4, 3, 1,5
     };
     static MyMockClass sequenceSearcher;
     static SimilarityFinder similarityFinder;
@@ -43,7 +43,7 @@ public class SImilarityFinderTest {
 
     @Test
     public void calculateJackardSimilarityTestWithDiffrentSeqences() {
-        assertThat(similarityFinder.calculateJackardSimilarity(seq1, seq2), is(1.0d));
+        assertThat(similarityFinder.calculateJackardSimilarity(seq1, otherSeq), lessThan(1.0d));
     }
 
 

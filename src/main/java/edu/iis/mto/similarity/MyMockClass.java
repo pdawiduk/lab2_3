@@ -15,7 +15,7 @@ public class MyMockClass implements SequenceSearcher {
             }
 
             public int getPosition() {
-                return 6;
+                return 5;
             }
         };
         return searchResult;
